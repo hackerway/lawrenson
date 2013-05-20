@@ -14,15 +14,15 @@
 ActiveRecord::Schema.define(:version => 20130518034314) do
 
   create_table "sports", :force => true do |t|
-    t.string   "name"
+    t.string   "name",       :null => false
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
   create_table "teams", :force => true do |t|
-    t.string   "name"
+    t.string   "name",       :null => false
     t.string   "logo_url"
-    t.integer  "sport_id"
+    t.integer  "sport_id",   :null => false
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
