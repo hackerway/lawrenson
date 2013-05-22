@@ -5,5 +5,7 @@ class CreateSports < ActiveRecord::Migration
 
       t.timestamps
     end
+	
+	add_index :sports, :name, :unique => true
   end
 end

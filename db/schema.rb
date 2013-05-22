@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(:version => 20130518034314) do
     t.datetime "updated_at", :null => false
   end
 
+  add_index "sports", ["name"], :name => "index_sports_on_name", :unique => true
+
   create_table "teams", :force => true do |t|
     t.string   "name",       :null => false
     t.string   "logo_url"
