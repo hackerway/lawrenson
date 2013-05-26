@@ -1,8 +1,6 @@
-# SQLite version 3.x
-#   gem install sqlite3
-#
-#   Ensure the SQLite 3 gem is defined in your Gemfile
-#   gem 'sqlite3'
+# To query:
+# SHOW CREATE TABLE sports;
+# INSERT INTO sports (id, name) VALUES (1, 'name')
 development:
   adapter: mysql2
   database: lawrenson
@@ -12,6 +10,21 @@ development:
   socket: /var/mysql/mysql.sock
   username: root
 
+# SQLite version 3.x
+#   gem install sqlite3
+#
+#   Ensure the SQLite 3 gem is defined in your Gemfile
+#   gem 'sqlite3'
+#
+# To query:
+# sqlite3 db/test.sqlite3
+# .mode col
+# .headers on
+# .tables
+# .indices sports
+# SELECT * FROM sports;
+# .exit
+#
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
