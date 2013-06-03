@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130603004824) do
+ActiveRecord::Schema.define(:version => 20130603021446) do
 
   create_table "competitions", :force => true do |t|
     t.string   "name",       :null => false
@@ -26,16 +26,18 @@ ActiveRecord::Schema.define(:version => 20130603004824) do
   add_index "competitions", ["sport_id"], :name => "competitions_sport_id_fk"
 
   create_table "games", :force => true do |t|
-    t.date     "date",         :null => false
-    t.integer  "home_team_id", :null => false
-    t.integer  "away_team_id", :null => false
+    t.date     "date",           :null => false
+    t.integer  "home_team_id",   :null => false
+    t.integer  "away_team_id",   :null => false
     t.integer  "home_score"
     t.integer  "away_score"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+    t.integer  "competition_id", :null => false
   end
 
   add_index "games", ["away_team_id"], :name => "games_away_team_id_fk"
+  add_index "games", ["competition_id"], :name => "games_competition_id_fk"
   add_index "games", ["home_team_id"], :name => "games_home_team_id_fk"
 
   create_table "sports", :force => true do |t|
@@ -58,6 +60,7 @@ ActiveRecord::Schema.define(:version => 20130603004824) do
 
   add_foreign_key "competitions", "sports", :name => "competitions_sport_id_fk"
 
+  add_foreign_key "games", "competitions", :name => "games_competition_id_fk"
   add_foreign_key "games", "teams", :name => "games_away_team_id_fk", :column => "away_team_id"
   add_foreign_key "games", "teams", :name => "games_home_team_id_fk", :column => "home_team_id"
 

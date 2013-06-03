@@ -1,6 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
+  id: 1
   name: MLS 2013
   sport_id: 1
   start_date: 2013-06-02
@@ -8,6 +9,7 @@ one:
   active: false
 
 two:
+  id: 2
   name: MLB 2013
   sport_id: 1
   start_date: 2013-06-02

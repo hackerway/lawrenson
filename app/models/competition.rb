@@ -2,6 +2,7 @@ class Competition < ActiveRecord::Base
   attr_accessible :active, :end_date, :name, :sport_id, :start_date
   
   belongs_to :sport
+  has_many :game
   
   validates :name, :sport_id, :presence => true
   validates :sport_id, :existence => true
