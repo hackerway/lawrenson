@@ -17,3 +17,9 @@ three:
   name: Arsenal
   logo_url:
   sport_id: 1
+  
+four:
+  id: 4
+  name: Oakland Athletics
+  logo_url:
+  sport_id: 2

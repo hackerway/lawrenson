@@ -9,6 +9,7 @@ gem 'sqlite3'
 gem 'mysql2'
 gem 'foreigner'
 gem "validates_existence", ">= 0.4"
+gem "validates_timeliness", "~> 3.0"
 
 # Gems used only for assets and not required
 # in production environments by default.

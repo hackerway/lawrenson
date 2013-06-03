@@ -11,7 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130526173609) do
+ActiveRecord::Schema.define(:version => 20130603004824) do
+
+  create_table "competitions", :force => true do |t|
+    t.string   "name",       :null => false
+    t.date     "start_date"
+    t.date     "end_date"
+    t.boolean  "active"
+    t.integer  "sport_id",   :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "competitions", ["sport_id"], :name => "competitions_sport_id_fk"
 
   create_table "games", :force => true do |t|
     t.date     "date",         :null => false
@@ -43,6 +55,8 @@ ActiveRecord::Schema.define(:version => 20130526173609) do
   end
 
   add_index "teams", ["sport_id"], :name => "teams_sport_id_fk"
+
+  add_foreign_key "competitions", "sports", :name => "competitions_sport_id_fk"
 
   add_foreign_key "games", "teams", :name => "games_away_team_id_fk", :column => "away_team_id"
   add_foreign_key "games", "teams", :name => "games_home_team_id_fk", :column => "home_team_id"
