@@ -1,6 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
+  id: 1
   date: 2013-05-26
   home_team_id: 1
   away_team_id: 3
@@ -9,9 +10,19 @@ one:
   competition: 1
 
 two:
+  id: 2
   date: 2013-05-26
   home_team_id: 1
   away_team_id: 3
   home_score: 1
   away_score: 1
+  competition: 1
+
+three:
+  id: 3
+  date: 2013-05-27
+  home_team_id: 1
+  away_team_id: 3
+  home_score:
+  away_score:
   competition: 1
