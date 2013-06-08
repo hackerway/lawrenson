@@ -3,6 +3,7 @@ class Competition < ActiveRecord::Base
   
   belongs_to :sport
   has_many :game
+  has_and_belongs_to_many :leagues
   
   validates :name, :sport_id, :presence => true
   validates :sport_id, :existence => true

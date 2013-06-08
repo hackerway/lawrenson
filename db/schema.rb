@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130604045159) do
+ActiveRecord::Schema.define(:version => 20130605022924) do
 
   create_table "competitions", :force => true do |t|
     t.string   "name",       :null => false
@@ -24,6 +24,14 @@ ActiveRecord::Schema.define(:version => 20130604045159) do
   end
 
   add_index "competitions", ["sport_id"], :name => "competitions_sport_id_fk"
+
+  create_table "competitions_leagues", :id => false, :force => true do |t|
+    t.integer "competition_id"
+    t.integer "league_id"
+  end
+
+  add_index "competitions_leagues", ["competition_id"], :name => "competitions_leagues_competition_id_fk"
+  add_index "competitions_leagues", ["league_id"], :name => "competitions_leagues_league_id_fk"
 
   create_table "games", :force => true do |t|
     t.date     "date",           :null => false
@@ -39,6 +47,12 @@ ActiveRecord::Schema.define(:version => 20130604045159) do
   add_index "games", ["away_team_id"], :name => "games_away_team_id_fk"
   add_index "games", ["competition_id"], :name => "games_competition_id_fk"
   add_index "games", ["home_team_id"], :name => "games_home_team_id_fk"
+
+  create_table "leagues", :force => true do |t|
+    t.string   "name",       :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "predictions", :force => true do |t|
     t.integer  "home_score", :null => false
@@ -79,6 +93,9 @@ ActiveRecord::Schema.define(:version => 20130604045159) do
   end
 
   add_foreign_key "competitions", "sports", :name => "competitions_sport_id_fk"
+
+  add_foreign_key "competitions_leagues", "competitions", :name => "competitions_leagues_competition_id_fk"
+  add_foreign_key "competitions_leagues", "leagues", :name => "competitions_leagues_league_id_fk"
 
   add_foreign_key "games", "competitions", :name => "games_competition_id_fk"
   add_foreign_key "games", "teams", :name => "games_away_team_id_fk", :column => "away_team_id"
