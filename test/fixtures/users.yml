@@ -1,13 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
+peter:
   id: 1
   first_name: Peter
   last_name: Hastie
   email: peter.hastie@gmail.com
 
-two:
+anne:
   id: 2
   first_name: Anne
   last_name: Hastie
   email: aahastie@gmail.com
+  
+bryan:
+  id: 3
+  first_name: Bryan
+  last_name: Aja
+  email: bryan@gmail.com

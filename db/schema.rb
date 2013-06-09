@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130605022924) do
+ActiveRecord::Schema.define(:version => 20130608233736) do
 
   create_table "competitions", :force => true do |t|
     t.string   "name",       :null => false
@@ -47,6 +47,16 @@ ActiveRecord::Schema.define(:version => 20130605022924) do
   add_index "games", ["away_team_id"], :name => "games_away_team_id_fk"
   add_index "games", ["competition_id"], :name => "games_competition_id_fk"
   add_index "games", ["home_team_id"], :name => "games_home_team_id_fk"
+
+  create_table "league_members", :force => true do |t|
+    t.integer  "league_id"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "league_members", ["league_id"], :name => "league_members_league_id_fk"
+  add_index "league_members", ["user_id"], :name => "league_members_user_id_fk"
 
   create_table "leagues", :force => true do |t|
     t.string   "name",       :null => false
@@ -100,6 +110,9 @@ ActiveRecord::Schema.define(:version => 20130605022924) do
   add_foreign_key "games", "competitions", :name => "games_competition_id_fk"
   add_foreign_key "games", "teams", :name => "games_away_team_id_fk", :column => "away_team_id"
   add_foreign_key "games", "teams", :name => "games_home_team_id_fk", :column => "home_team_id"
+
+  add_foreign_key "league_members", "leagues", :name => "league_members_league_id_fk"
+  add_foreign_key "league_members", "users", :name => "league_members_user_id_fk"
 
   add_foreign_key "predictions", "games", :name => "predictions_game_id_fk"
   add_foreign_key "predictions", "users", :name => "predictions_user_id_fk"

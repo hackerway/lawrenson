@@ -17,4 +17,11 @@ class UserTest < ActiveSupport::TestCase
   	user = User.new(:email => 'pete@sillypog.com', :first_name => 'Peter', :last_name => 'Hastie')
 	assert user.valid?
   end
+  
+  test "retrieve user's leagues" do
+  	user = users(:peter)
+	leagues = user.leagues
+	assert leagues.size == 1
+	assert leagues[0] == leagues(:one)
+  end
 end
