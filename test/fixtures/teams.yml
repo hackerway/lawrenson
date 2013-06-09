@@ -1,24 +1,24 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
+earthquakes:
   id: 1
   name: San Jose Earthquakes
   logo_url: 
   sport_id: 1
 
-two:
+giants:
   id: 2
   name: San Francisco Giants
   logo_url: 
   sport_id: 2
   
-three:
+arsenal:
   id: 3
   name: Arsenal
   logo_url:
   sport_id: 1
   
-four:
+as:
   id: 4
   name: Oakland Athletics
   logo_url:
