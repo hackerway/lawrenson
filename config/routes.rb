@@ -12,6 +12,12 @@ Lawrenson::Application.routes.draw do
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
+  resources :sports
+  resources :teams
+  resources :competitions do
+  	resources :games
+  end
+  resources :games, :only => [:create, :update]
   resources :users
 
   # Sample resource route with options:

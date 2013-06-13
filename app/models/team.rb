@@ -9,4 +9,8 @@ class Team < ActiveRecord::Base
   validates :sport_id, :existence => true
   validates :logo_url, :format => {:with => %r{\.(gif|jpg|png)$}i, :message => 'must be a URL for GIF, JPG or PNG image.'}, :allow_blank => true
   
+  def self.sport_all(sport)
+  	Team.where("sport_id = ?", sport.id)
+  end
+  
 end

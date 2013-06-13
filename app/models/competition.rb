@@ -2,7 +2,7 @@ class Competition < ActiveRecord::Base
   attr_accessible :active, :end_date, :name, :sport_id, :start_date
   
   belongs_to :sport
-  has_many :game
+  has_many :games
   has_and_belongs_to_many :leagues
   
   validates :name, :sport_id, :presence => true

@@ -7,7 +7,7 @@ one:
   away_team_id: 3
   home_score: 1
   away_score: 1
-  competition: 1
+  competition_id: 1
 
 two:
   id: 2
@@ -16,7 +16,7 @@ two:
   away_team_id: 3
   home_score: 1
   away_score: 1
-  competition: 1
+  competition_id: 1
 
 three:
   id: 3
@@ -25,4 +25,4 @@ three:
   away_team_id: 3
   home_score:
   away_score:
-  competition: 1
+  competition_id: 1

@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<%= @competition.name %>
+<%= @competition.sport.name %>
+<%= @competition.start_date %>
+<%= @competition.end_date %>
+<%= @competition.active %>
+
+<%= link_to 'Edit', edit_competition_path(@competition) %> |
+<%= link_to 'Back', competitions_path %>
+
+<div id="games">
+	<%= link_to 'Add Game', new_competition_game_path(@competition) %>
+	<ul>
+	  <% @competition.games.each do |game| %>
+		<li>
+		  <%= game.date %>
+		  <%= game.home_team.name %>
+		  (<%= game.home_score %>)
+		  :
+		  <%= game.away_team.name %>
+		  (<%= game.away_score %>) 
+		  <%= link_to 'Edit', edit_competition_game_path(@competition, game) %>
+		</li>
+      <% end %>
+	</ul>
+</div>
