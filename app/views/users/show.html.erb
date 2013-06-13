@@ -1,12 +1,22 @@
 <p id="notice"><%= notice %></p>
 
-<h1>First Name</h1>
-<%= @user.first_name %>
-<h1>Last Name</h1>
-<%= @user.last_name %>
-<h1>Email</h1>
-<%= @user.email %> 
+<h1><%= @user.first_name + ' ' + @user.last_name %></h1>
+<%= @user.email %>
 
+<div>
+	<h2>Leagues</h2>
+	<%= link_to 'Add', new_league_path %>
+	<ul>
+	  <% @user.leagues.each do |league| %>
+		<li>
+		  <%= league.name %>
+		  <%= link_to 'View', show_league_path(league) %>
+		</li>
+      <% end %>
+	</ul>
+</div>
 
+<div>
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
+</div>

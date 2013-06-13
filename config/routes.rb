@@ -19,6 +19,7 @@ Lawrenson::Application.routes.draw do
   end
   resources :games, :only => [:create, :update]
   resources :users
+  resources :leagues
 
   # Sample resource route with options:
   #   resources :products do
