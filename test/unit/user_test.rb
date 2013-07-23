@@ -19,7 +19,7 @@ class UserTest < ActiveSupport::TestCase
   end
   
   test "retrieve user's leagues" do
-  	user = users(:peter)
+  	user = users(:anne)
 	leagues = user.leagues
 	assert leagues.size == 1
 	assert leagues[0] == leagues(:one)

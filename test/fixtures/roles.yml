@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+player:
+  id: 1
+  role: player
+
+owner:
+  id: 2
+  role: owner
