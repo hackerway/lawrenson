@@ -23,6 +23,9 @@ Lawrenson::Application.routes.draw do
   resources :leagues
   resources :roles
 
+  # Needed for devise
+  root :to => "leagues#index"
+
   # Sample resource route with options:
   #   resources :products do
   #     member do
