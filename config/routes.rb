@@ -18,7 +18,6 @@ Lawrenson::Application.routes.draw do
   	resources :games
   end
   resources :games, :only => [:create, :update]
-  resources :users
   resources :leagues
   resources :roles
 
