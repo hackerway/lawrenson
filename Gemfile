@@ -8,6 +8,7 @@ gem 'rails', '3.2.13'
 gem 'sqlite3'
 gem 'mysql2'
 gem 'foreigner'
+gem "rake", "~> 10.1.1"
 gem "validates_existence", ">= 0.4"
 gem "validates_timeliness", "~> 3.0"
 
