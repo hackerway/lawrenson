@@ -5,12 +5,13 @@ gem 'rails', '3.2.13'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
-gem 'mysql2'
-gem 'foreigner'
+gem "devise", "~> 3.2.2"
+gem "foreigner", "~> 1.4.1"
+gem "mysql2", "~> 0.3.11"
 gem "rake", "~> 10.1.1"
-gem "validates_existence", ">= 0.4"
-gem "validates_timeliness", "~> 3.0"
+gem "sqlite3", "~> 1.3.8"
+gem "validates_existence", "~> 0.8.0"
+gem "validates_timeliness", "~> 3.0.14"
 
 # Gems used only for assets and not required
 # in production environments by default.
